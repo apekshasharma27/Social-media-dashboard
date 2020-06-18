@@ -15,6 +15,7 @@ body
   display: flex;
   justify-content:space-between;
   align-items: center;
+  cursor:pointer;
 }
 
 /*the background for the switch*/
@@ -72,6 +73,12 @@ transition: .4s;
   border-radius: 50%;
 }
 
+/*When cursor is hovered on the silder the color changes to represent active state*/
+.switch input:hover + .slider
+{
+  background-image: linear-gradient(to right, hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+}
+
 /*when the checkbox is clicked the immediate sibling of the input checkbox i.e the slider's bckgrnd color changes*/
 .switch input:checked + .slider
 {
@@ -107,7 +114,6 @@ transition: .4s;
   font-size: 11px;
   position:absolute;
   bottom:0px;
-
 }
 
 .attribution a
@@ -332,11 +338,17 @@ dash-overview
  dash-overview
  {
    flex-direction: column;
+   padding-bottom: 1.5rem;
  }
 
  .overview-card
  {
    width:85%;
+ }
+
+ .attribution
+ {
+   visibility: hidden;
  }
 
 
